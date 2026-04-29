@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mika Product Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="language-switch" aria-label="Language selector">
+      <button class="active" type="button" data-lang="en">EN</button>
+      <span>/</span>
+      <button type="button" data-lang="fr">FR</button>
+    </div>
+    <main class="shell" aria-label="Mika clickable prototype">
+      <section class="brand-panel" aria-label="Mika product preview">
+        <div class="launch-strip">
+          <img class="logo-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
+          <span data-i18n="betaBadge">Private beta for busy families</span>
+        </div>
+        <div class="brand-lockup">
+          <h1 data-i18n="heroTitle">Your family’s personal assistant.</h1>
+        </div>
+        <p class="brand-copy" data-i18n="heroCopy">
+          Mika helps with school forms, birthday invites, schedules, school
+          breaks, weekend plans, and the hundred little things that usually live
+          in your head. So your week feels lighter, calmer, and more under
+          control.
+        </p>
+        <form id="hero-waitlist" class="hero-waitlist" aria-label="Join the Mika waitlist">
+          <input
+            name="hero_email"
+            type="email"
+            autocomplete="email"
+            placeholder="you@email.com"
+            data-i18n-placeholder="heroEmailPlaceholder"
+            required
+          />
+          <button class="brand-cta" type="submit" data-i18n="heroWaitlistButton">Try Mika</button>
+        </form>
+        <div class="hero-actions">
+          <button id="demo-start" class="demo-link" type="button" data-i18n="demoLink">Join the private beta</button>
+          <span data-i18n="privacyLine">Private by design. Your family data stays yours.</span>
+        </div>
+        <div class="signal-row" aria-label="Mika positioning">
+          <span data-i18n="signalForms">School forms</span>
+          <span data-i18n="signalVoice">Voice notes</span>
+          <span data-i18n="signalCalendar">Birthday invites</span>
+          <span data-i18n="signalHandoffs">School breaks</span>
+        </div>
+        <section class="demo-flow" aria-label="Investor demo flow">
+          <div class="flow-card hot">
+            <span>01</span>
+            <strong data-i18n="flowBeforeTitle">Before Mika</strong>
+            <p data-i18n="flowBeforeCopy">If you’re the one remembering school forms, pickups, birthdays, groceries, camp deadlines, and who needs to be where — Mika is for you.</p>
+          </div>
+          <div class="flow-card">
+            <span>02</span>
+            <strong data-i18n="flowCaptureTitle">A family assistant, not another calendar</strong>
+            <p data-i18n="flowCaptureCopy">Most calendars were built for meetings. Mika was built for family life.</p>
+          </div>
+          <div class="flow-card">
+            <span>03</span>
+            <strong data-i18n="flowBriefTitle">See the full week</strong>
+            <p data-i18n="flowBriefCopy">Mika quietly keeps track of what’s coming up, reminds the right person, and helps your family stay one step ahead.</p>
+          </div>
+          <div class="flow-card">
+            <span>04</span>
+            <strong data-i18n="flowHandoffTitle">For every kind of family</strong>
+            <p data-i18n="flowHandoffCopy">For busy families. For co-parents. For solo parents. For anyone carrying too much in their head.</p>
+          </div>
+        </section>
+        <div class="before-after" aria-label="Before Mika and after Mika">
+          <div class="moment-card before">
+            <p class="eyebrow" data-i18n="beforeLabel">Before Mika</p>
+            <h2 data-i18n="beforeTitle">Wait. What did we forget?</h2>
+            <div class="chaos-stack">
+              <span class="mini-note purple" data-i18n="noteSlip">Field trip slip?</span>
+              <span class="mini-note blue" data-i18n="notePickup">Who has swim pickup?</span>
+              <span class="mini-note green" data-i18n="noteRsvp">Birthday gift</span>
+              <span class="mini-note coral" data-i18n="noteMilk">Milk. Again.</span>
+            </div>
+          </div>
+          <div class="moment-card after">
+            <p class="eyebrow" data-i18n="afterLabel">After Mika</p>
+            <h2 data-i18n="afterTitle">Your family, one step ahead.</h2>
+            <div class="brief-preview">
+              <strong data-i18n="briefPreviewTitle">This week is handled.</strong>
+              <p data-i18n="briefPreviewCopy">
+                Swim at 4, Sam pickup. Field trip slip due tomorrow. RSVP by
+                Friday. Saturday birthday party at 2. Mika already surfaced what
+                matters.
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="trust-copy" data-i18n="trustCopy">
+          Mika supports weekdays and weekends, school-year rhythms, school
+          breaks, sports schedules, family gatherings, birthday parties, and the
+          invisible logistics in between. Because family life doesn’t only
+          happen Monday to Friday.
+        </p>
+        <section class="social-proof" aria-label="Social proof">
+          <article>
+            <p data-i18n="proofOne">
+              “This feels like having help.”
+            </p>
+            <strong data-i18n="proofOneByline">“Finally, someone else remembers the family stuff.”</strong>
+          </article>
+          <article>
+            <p data-i18n="proofTwo">
+              “The first family app that actually reduces mental load.”
+            </p>
+            <strong data-i18n="proofTwoByline">Working parent · shared custody schedule</strong>
+          </article>
+        </section>
+      </section>
+
+      <section class="prototype-column" aria-label="Mika prototype and feedback">
+      <section class="phone" aria-label="Mika app">
+        <div class="status-bar" aria-hidden="true">
+          <span>9:41</span>
+          <span>LTE 100%</span>
+        </div>
+
+        <section id="onboarding" class="screen active" aria-label="Onboarding">
+          <div class="onboarding-hero">
+            <img class="phone-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
+            <p class="eyebrow" data-i18n="appWelcome">Welcome to Mika</p>
+            <h2 id="onboarding-title">Let’s get your family set up.</h2>
+            <p id="onboarding-copy">
+              Tell Mika who’s in the family, when you'd like updates, and which
+              calendar you already use.
+            </p>
+          </div>
+
+          <div class="progress-dots" aria-label="Onboarding progress">
+            <button class="dot active" data-step="0" aria-label="Step 1"></button>
+            <button class="dot" data-step="1" aria-label="Step 2"></button>
+            <button class="dot" data-step="2" aria-label="Step 3"></button>
+            <button class="dot" data-step="3" aria-label="Step 4"></button>
+          </div>
+
+          <div class="onboarding-card">
+            <div class="onboarding-step active" data-step-panel="0">
+              <label>
+                <span data-i18n="householdNameLabel">Family name</span>
+                <input value="The Carter Family" />
+              </label>
+              <label>
+                <span data-i18n="timezoneLabel">Time zone</span>
+                <select>
+                  <option>America/Toronto</option>
+                  <option>America/New_York</option>
+                  <option>America/Los_Angeles</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="onboarding-step" data-step-panel="1">
+              <div class="kid-row">
+                <span class="avatar rose">M</span>
+                <label>
+                  <span data-i18n="childLabel">Child</span>
+                  <input value="Mia, 7" />
+                </label>
+              </div>
+              <div class="kid-row">
+                <span class="avatar blue">L</span>
+                <label>
+                  <span data-i18n="childLabel">Child</span>
+                  <input value="Leo, 4" />
+                </label>
+              </div>
+              <button class="ghost-button" type="button" data-i18n="addChildButton">Add another child</button>
+            </div>
+
+            <div class="onboarding-step" data-step-panel="2">
+              <div class="connect-card">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2v3M17 2v3M4 9h16M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" />
+                </svg>
+                <div>
+                  <strong data-i18n="googleCalendarTitle">Google Calendar</strong>
+                  <p data-i18n="googleCalendarCopy">Use the calendar you already trust so Mika can help with school, activities, and what’s coming up.</p>
+                </div>
+              </div>
+              <button class="primary-button" type="button" data-i18n="connectCalendarButton">Bring in my calendar</button>
+              <button class="text-button" type="button" data-i18n="skipPrototypeButton">Skip for now</button>
+            </div>
+
+            <div class="onboarding-step" data-step-panel="3">
+              <label>
+                <span data-i18n="briefTimeLabel">When should Mika check in?</span>
+                <input type="time" value="07:00" />
+              </label>
+              <div class="toggle-row">
+                <span data-i18n="emailBriefLabel">Email summary</span>
+                <button class="toggle on" type="button" aria-pressed="true"></button>
+              </div>
+              <div class="toggle-row">
+                <span data-i18n="pushNotificationLabel">Phone reminder</span>
+                <button class="toggle on" type="button" aria-pressed="true"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="onboarding-actions">
+            <button id="back-step" class="secondary-button" type="button">Skip for now</button>
+            <button id="next-step" class="primary-button cta-pulse" type="button">Continue</button>
+          </div>
+        </section>
+
+        <section id="home" class="screen app-screen" aria-label="Daily brief home">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow" data-i18n="homeDate">Wednesday, Apr 22</p>
+              <h2 data-i18n="homeGreeting">Here’s your day, handled.</h2>
+            </div>
+            <img class="header-wordmark" src="mika-logo-cropped.png" alt="Mika.io" />
+            <button id="open-settings" class="icon-button" type="button" aria-label="Settings">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" />
+                <path d="m19 13.5 1.5 1.2-2 3.4-1.8-.7a7 7 0 0 1-1.7 1l-.3 1.9H9.3L9 18.4a7 7 0 0 1-1.7-1l-1.8.7-2-3.4L5 13.5a7 7 0 0 1 0-2L3.5 10.3l2-3.4 1.8.7a7 7 0 0 1 1.7-1l.3-1.9h5.4l.3 1.9a7 7 0 0 1 1.7 1l1.8-.7 2 3.4-1.5 1.2a7 7 0 0 1 0 2Z" />
+              </svg>
+            </button>
+          </header>
+
+          <div class="brief-hero">
+            <div>
+              <p class="eyebrow" data-i18n="briefHeroEyebrow">Today, at a glance</p>
+              <strong data-i18n="briefHeroText">3 events, 4 tasks, 1 thing that might slip.</strong>
+            </div>
+            <span class="brief-time">7:00</span>
+          </div>
+
+          <article class="brief-section">
+            <h3 data-i18n="briefTodayTitle">Today</h3>
+            <p data-i18n="briefTodayCopy">
+              Mia has swim at 4:00 at Rec Center, and Sam is on pickup. Leo has
+              library day, so the book bag needs to leave with him.
+            </p>
+          </article>
+          <article class="brief-section">
+            <h3 data-i18n="briefTodoTitle">To Do</h3>
+            <p data-i18n="briefTodoCopy">
+              RSVP for Aria's birthday by Friday. Buy milk tonight, and sign the
+              field trip form before backpacks are packed.
+            </p>
+          </article>
+          <article class="brief-section alert">
+            <h3 data-i18n="briefFallingTitle">Falling Through</h3>
+            <p data-i18n="briefFallingCopy">
+              The field trip permission slip is due tomorrow morning and still
+              needs a parent signature.
+            </p>
+          </article>
+          <article class="brief-section calm">
+            <h3 data-i18n="briefWinTitle">Small Win</h3>
+            <p data-i18n="briefWinCopy">
+              Saturday morning is still clear. Mika is keeping it that way.
+            </p>
+          </article>
+        </section>
+
+        <section id="tasks" class="screen app-screen" aria-label="Tasks">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow" data-i18n="tasksEyebrow">What Mika is helping with</p>
+              <h2 data-i18n="tasksTitle">What needs attention</h2>
+            </div>
+          </header>
+          <div class="tabs" role="tablist" aria-label="Task filter">
+            <button class="active" type="button" data-i18n="tabToday">Today</button>
+            <button type="button" data-i18n="tabWeek">Week</button>
+            <button type="button" data-i18n="tabLater">Later</button>
+            <button type="button" data-i18n="tabDone">Done</button>
+          </div>
+          <div class="task-list">
+            <button class="task-item overdue" type="button">
+              <span class="check-circle"></span>
+              <span>
+                <strong data-i18n="taskSlipTitle">Sign field trip form</strong>
+                <small data-i18n="taskSlipMeta">Due tomorrow morning · From photo</small>
+              </span>
+              <em>Mom</em>
+            </button>
+            <button class="task-item" type="button">
+              <span class="check-circle"></span>
+              <span>
+                <strong data-i18n="taskMilkTitle">Buy milk</strong>
+                <small data-i18n="taskMilkMeta">No date · Kitchen note</small>
+              </span>
+              <em>Sam</em>
+            </button>
+            <button class="task-item" type="button">
+              <span class="check-circle"></span>
+              <span>
+                <strong data-i18n="taskRsvpTitle">RSVP to Aria's birthday</strong>
+                <small data-i18n="taskRsvpMeta">Friday by 5:00 PM</small>
+              </span>
+              <em>Mom</em>
+            </button>
+          </div>
+          <div id="undo-toast" class="toast" role="status" data-i18n="undoToast">Marked done. Undo</div>
+        </section>
+
+        <section id="events" class="screen app-screen" aria-label="Events">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow" data-i18n="calendarEyebrow">Family calendar</p>
+              <h2 data-i18n="calendarTitle">This week</h2>
+            </div>
+          </header>
+          <div class="week-grid" aria-label="Week calendar">
+            <div class="day-col">
+              <strong>Mon</strong>
+              <span></span>
+            </div>
+            <div class="day-col">
+              <strong>Tue</strong>
+              <span class="event-pill rose">Piano</span>
+            </div>
+            <div class="day-col today">
+              <strong>Wed</strong>
+              <span class="event-pill blue">Library</span>
+              <span class="event-pill mint">Swim 4p</span>
+            </div>
+            <div class="day-col">
+              <strong>Thu</strong>
+              <span class="event-pill amber">Field trip</span>
+            </div>
+            <div class="day-col">
+              <strong>Fri</strong>
+              <span class="event-pill rose">Party RSVP</span>
+            </div>
+          </div>
+          <article class="detail-card">
+              <p class="eyebrow" data-i18n="selectedEventEyebrow">Selected event</p>
+            <h3 data-i18n="selectedEventTitle">Mia swim class</h3>
+            <p data-i18n="selectedEventCopy">Today, 4:00 PM at Rec Center. Sam is on pickup.</p>
+          </article>
+        </section>
+
+        <section id="meals" class="screen app-screen" aria-label="Meal list">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow" data-i18n="mealsEyebrow">Meals this week</p>
+              <h2 data-i18n="mealsTitle">This week</h2>
+            </div>
+            <button class="icon-button" type="button" aria-label="Next week">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </button>
+          </header>
+          <div class="meal-list">
+            <label><span>Mon</span><input value="Tacos" /></label>
+            <label><span>Tue</span><input value="Leftovers" /></label>
+            <label><span>Wed</span><input value="Pasta bolognese" /></label>
+            <label><span>Thu</span><input placeholder="Add dinner" /></label>
+            <label><span>Fri</span><input value="Pizza night" /></label>
+            <label><span>Sat</span><input placeholder="Add dinner" /></label>
+            <label><span>Sun</span><input value="Soup + bread" /></label>
+          </div>
+        </section>
+
+        <section id="settings" class="screen app-screen" aria-label="Settings">
+          <header class="app-header">
+            <div>
+              <p class="eyebrow" data-i18n="settingsEyebrow">Settings</p>
+              <h2 data-i18n="settingsTitle">The Carter Family</h2>
+            </div>
+          </header>
+          <div class="settings-list">
+            <button type="button">
+              <span data-i18n="settingsHousehold">Household</span>
+              <strong data-i18n="settingsHouseholdValue">2 parents, 2 kids</strong>
+            </button>
+            <button type="button">
+              <span data-i18n="settingsBrief">Daily brief</span>
+              <strong>7:00 AM</strong>
+            </button>
+            <button type="button">
+              <span data-i18n="settingsNotifications">Notifications</span>
+              <strong data-i18n="settingsNotificationsValue">Email + push</strong>
+            </button>
+            <button type="button">
+              <span data-i18n="settingsExport">Data export</span>
+              <strong>JSON</strong>
+            </button>
+          </div>
+        </section>
+
+        <section id="confirm" class="screen app-screen" aria-label="Confirm captured item">
+          <header class="app-header">
+            <button class="icon-button" id="close-confirm" type="button" aria-label="Back">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m15 18-6-6 6-6" />
+              </svg>
+            </button>
+            <div>
+              <p class="eyebrow" data-i18n="confirmEyebrow">Take a quick look before saving</p>
+              <h2 data-i18n="confirmTitle">Here’s what Mika took care of</h2>
+            </div>
+          </header>
+          <div class="parsed-card">
+            <label>
+              <span data-i18n="typeLabel">Type</span>
+              <select>
+                <option>Event</option>
+                <option>Task</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="titleLabel">Title</span>
+              <input value="Mia swim class" />
+            </label>
+            <label>
+              <span data-i18n="dateTimeLabel">Date and time</span>
+              <input value="Tuesday at 4:00 PM" />
+            </label>
+            <label>
+              <span data-i18n="locationLabel">Location</span>
+              <input value="Rec Center" />
+            </label>
+            <label>
+              <span data-i18n="ownerLabel">Owner</span>
+              <input value="Sam" />
+            </label>
+          </div>
+          <button id="save-confirm" class="primary-button full" type="button" data-i18n="saveMikaButton">Save this</button>
+        </section>
+
+        <div id="capture-sheet" class="capture-sheet" aria-hidden="true">
+          <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Capture">
+            <div class="sheet-handle" aria-hidden="true"></div>
+            <h2 data-i18n="captureTitle">Add something you’d like help with</h2>
+            <p data-i18n="captureCopy">Type it, say it out loud, or snap the form. Mika helps you make sense of it.</p>
+            <textarea id="capture-input">Mia has swim class Tuesday 4pm at Rec Center, Sam picks up</textarea>
+            <div class="capture-actions">
+              <button class="icon-labeled" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v10M8 7v5a4 4 0 0 0 8 0V7M5 11v1a7 7 0 0 0 14 0v-1M12 19v3" />
+                </svg>
+                <span data-i18n="voiceButton">Voice</span>
+              </button>
+              <button class="icon-labeled" type="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 7h3l2-3h6l2 3h3v13H4V7Zm8 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                </svg>
+                <span data-i18n="photoButton">Photo</span>
+              </button>
+              <button id="parse-capture" class="primary-button" type="button" data-i18n="parseButton">Let Mika help</button>
+            </div>
+          </div>
+        </div>
+
+        <nav class="bottom-nav" aria-label="Primary navigation">
+          <button class="nav-button active" data-target="home" type="button" aria-label="Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 11 12 4l8 7v9H5v-9Z" />
+            </svg>
+            <span data-i18n="navHome">Home</span>
+          </button>
+          <button class="nav-button" data-target="tasks" type="button" aria-label="Tasks">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 12 4 4L19 6M5 20h14" />
+            </svg>
+            <span data-i18n="navTasks">Tasks</span>
+          </button>
+          <button id="open-capture" class="add-button" type="button" aria-label="Add capture">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </button>
+          <button class="nav-button" data-target="events" type="button" aria-label="Events">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 3v3M17 3v3M4 9h16M5 5h14v15H5V5Z" />
+            </svg>
+            <span data-i18n="navEvents">Events</span>
+          </button>
+          <button class="nav-button" data-target="meals" type="button" aria-label="Meals">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 3v18M4 8h6M17 3v18M14 3h6v8a3 3 0 0 1-6 0V3Z" />
+            </svg>
+            <span data-i18n="navMeals">Meals</span>
+          </button>
+        </nav>
+      </section>
+
+        <section class="feedback-card" aria-label="Mika waitlist and feedback">
+          <div>
+            <p class="eyebrow" data-i18n="feedbackEyebrow">Join the private beta</p>
+            <h2 data-i18n="feedbackTitle">Tell us what would make your family life easier.</h2>
+            <p data-i18n="feedbackCopy">
+              We’re building Mika with real families first. Join early access
+              and help shape the assistant modern families actually need.
+            </p>
+          </div>
+          <form id="waitlist-form" class="waitlist-form">
+            <div class="form-grid">
+              <label>
+                <span data-i18n="firstNameLabel">First name</span>
+                <input name="first_name" autocomplete="given-name" placeholder="Alex" data-i18n-placeholder="firstNamePlaceholder" required />
+              </label>
+              <label>
+                <span data-i18n="emailLabel">Email</span>
+                <input name="email" type="email" autocomplete="email" placeholder="you@email.com" data-i18n-placeholder="emailPlaceholder" required />
+              </label>
+              <label>
+                <span data-i18n="locationLabel">Location</span>
+                <input name="location" autocomplete="address-level2" placeholder="Toronto, ON" data-i18n-placeholder="locationPlaceholder" required />
+              </label>
+            </div>
+            <fieldset class="rating-field">
+              <legend data-i18n="ratingLabel">How would you rate the app?</legend>
+              <div class="star-rating" aria-label="Rate Mika from 1 to 5">
+                <input id="rating-5" name="rating" type="radio" value="5" required />
+                <label for="rating-5" aria-label="5 stars">★</label>
+                <input id="rating-4" name="rating" type="radio" value="4" />
+                <label for="rating-4" aria-label="4 stars">★</label>
+                <input id="rating-3" name="rating" type="radio" value="3" />
+                <label for="rating-3" aria-label="3 stars">★</label>
+                <input id="rating-2" name="rating" type="radio" value="2" />
+                <label for="rating-2" aria-label="2 stars">★</label>
+                <input id="rating-1" name="rating" type="radio" value="1" />
+                <label for="rating-1" aria-label="1 star">★</label>
+              </div>
+            </fieldset>
+            <label>
+              <span data-i18n="usefulnessLabel">After trying the prototype, it feels...</span>
+              <select name="usefulness" required>
+                <option value="" data-i18n="usefulnessPlaceholder">Choose one</option>
+                <option value="amazing_fit" data-i18n="usefulnessLove">like an amazing fit for my family</option>
+                <option value="very_useful" data-i18n="usefulnessVery">very useful for our everyday logistics</option>
+                <option value="interesting" data-i18n="usefulnessInteresting">interesting, but I need to see more</option>
+                <option value="unclear" data-i18n="usefulnessUnclear">not clear enough yet</option>
+                <option value="not_useful" data-i18n="usefulnessNot">not useful for my family</option>
+              </select>
+            </label>
+            <fieldset class="keyword-field">
+              <legend data-i18n="keywordsLabel">What would be your main priorities?</legend>
+              <label><input type="checkbox" name="feedback_keywords" value="school_sports_birthdays" /> <span data-i18n="keywordForms">School logistics, sports and activities</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="calendar_management" /> <span data-i18n="keywordCalendar">Calendar management</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="coparent_handoffs" /> <span data-i18n="keywordHandoffs">Co-parent handoffs</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="forgotten_task_notifications" /> <span data-i18n="keywordTasks">Birthday parties, gifts, and forgotten-task notifications</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="meals_meal_prep" /> <span data-i18n="keywordMeals">Meals and meal prep</span></label>
+              <label><input type="checkbox" name="feedback_keywords" value="briefs" /> <span data-i18n="keywordBrief">School break planning and morning, weekly, or school-break briefs</span></label>
+            </fieldset>
+            <label>
+              <span data-i18n="familySnapshotLabel">Tell us more about your family dynamics or family structure.</span>
+              <textarea
+                name="family_snapshot"
+                placeholder="Example: 2 parents, 2 kids ages 4 and 7. One parent travels often, one manages school logistics."
+                data-i18n-placeholder="familySnapshotPlaceholder"
+              ></textarea>
+            </label>
+            <label>
+              <span data-i18n="commentLabel">What can we improve? What features do you want to see in the product?</span>
+              <textarea
+                name="comment"
+                placeholder="What does your family always forget? What would make Mika useful enough to share?"
+                data-i18n-placeholder="commentPlaceholder"
+                required
+              ></textarea>
+            </label>
+            <div class="form-footer">
+              <button class="brand-cta" type="submit" data-i18n="feedbackButton">Send your feedback</button>
+              <p id="waitlist-status" role="status" data-i18n="formDefaultStatus">
+                Privacy-first beta. No kid data sold. No spam.
+              </p>
+            </div>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <section class="footer-waitlist" aria-label="Join Mika waitlist">
+      <p class="eyebrow" data-i18n="footerEyebrow">Early access</p>
+      <h2 data-i18n="footerTitle">Ready for less mental load?</h2>
+      <p data-i18n="footerCopy">
+        Join the first families using Mika to make weeks smoother, weekends
+        calmer, and nothing important slip through the cracks.
+      </p>
+      <form id="footer-waitlist" class="footer-waitlist-form">
+        <input
+          name="footer_email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@email.com"
+          data-i18n-placeholder="heroEmailPlaceholder"
+          required
+        />
+        <button class="brand-cta" type="submit" data-i18n="footerButton">Join the waitlist</button>
+      </form>
+      <strong data-i18n="footerPrivacy">No kid data sold, ever. You can delete everything in one tap.</strong>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
