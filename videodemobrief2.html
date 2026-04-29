@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socialscale Video Brief · Revised Creative Direction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f8f7f5;
+      --surface: rgba(255, 255, 255, 0.72);
+      --surface-strong: #ffffff;
+      --ink: #181e25;
+      --muted: rgba(24, 30, 37, 0.68);
+      --faint: rgba(24, 30, 37, 0.18);
+      --line: rgba(24, 30, 37, 0.1);
+      --line-strong: rgba(24, 30, 37, 0.18);
+      --accent: #d6fd70;
+      --accent-ink: #111613;
+      --warm: #f3ede2;
+      --shadow: 0 24px 80px rgba(24, 30, 37, 0.08);
+      --sans: "Geist", system-ui, sans-serif;
+      --serif: "Instrument Serif", Georgia, serif;
+      --mono: "Fragment Mono", monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at top left, rgba(214, 253, 112, 0.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(24, 30, 37, 0.06), transparent 22%),
+        linear-gradient(180deg, #fcfcfa 0%, var(--bg) 100%);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 72px;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(1180px, calc(100vw - 40px));
+      margin: 24px auto 0;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #151b21 0%, #202933 100%);
+      border-radius: 28px;
+      padding: 38px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -28% auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(214, 253, 112, 0.34), rgba(214, 253, 112, 0) 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow,
+    .label {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+    }
+
+    .eyebrow {
+      color: rgba(255, 255, 255, 0.62);
+      margin-bottom: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.9fr);
+      gap: 28px;
+      align-items: end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.95;
+      font-weight: 400;
+      margin-bottom: 18px;
+      max-width: 8ch;
+    }
+
+    .hero h1 em {
+      color: rgba(255, 255, 255, 0.5);
+      font-style: italic;
+    }
+
+    .lede {
+      max-width: 680px;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .hero-note {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .hero-note .label {
+      color: rgba(255, 255, 255, 0.56);
+      margin-bottom: 10px;
+    }
+
+    .hero-note p {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 15px;
+    }
+
+    .hero-links {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .main {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .side,
+    .content-card {
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .side {
+      position: sticky;
+      top: 20px;
+      padding: 18px;
+    }
+
+    .side h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .toc {
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      transition: 120ms ease;
+    }
+
+    .toc a:hover {
+      background: rgba(24, 30, 37, 0.05);
+      color: var(--ink);
+    }
+
+    .side-note {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .content {
+      display: grid;
+      gap: 20px;
+    }
+
+    .content-card {
+      padding: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .section-head .label {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .section-head .line {
+      flex: 1;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    h2.section-title {
+      font-family: var(--serif);
+      font-size: clamp(30px, 3vw, 42px);
+      line-height: 1;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mini-card,
+    .icp-card,
+    .keyword-card,
+    .shot-card,
+    .advice-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .mini-card h3,
+    .icp-card h3,
+    .keyword-card h3,
+    .shot-card h3,
+    .advice-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: var(--warm);
+      padding: 6px 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .icp-card ul,
+    .mini-card ul,
+    .keyword-card ul,
+    .advice-card ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .icp-card li,
+    .mini-card li,
+    .keyword-card li,
+    .advice-card li {
+      margin: 6px 0;
+    }
+
+    .big-quote {
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(214, 253, 112, 0.22), rgba(214, 253, 112, 0.08));
+      border: 1px solid rgba(24, 30, 37, 0.08);
+    }
+
+    .big-quote p {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.02;
+    }
+
+    .big-quote span {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      font-family: var(--sans);
+      color: var(--muted);
+    }
+
+    .beats {
+      margin-top: 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .beat {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 16px;
+      align-items: start;
+      padding: 16px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+    }
+
+    .beat-time {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-top: 2px;
+    }
+
+    .beat h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .beat p,
+    .beat li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .beat ul {
+      padding-left: 18px;
+    }
+
+    .table-wrap {
+      margin-top: 20px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface-strong);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 840px;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: rgba(24, 30, 37, 0.03);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .must-say {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: #171d24;
+      color: white;
+    }
+
+    .must-say h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .keyword {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+    }
+
+    .callout {
+      margin-top: 18px;
+      background: var(--warm);
+      border-radius: 20px;
+      padding: 18px;
+      border: 1px solid rgba(24, 30, 37, 0.08);
+      color: var(--ink);
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 1080px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        position: static;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-2,
+      .beat {
+        grid-template-columns: 1fr;
+      }
+
+      .shell {
+        width: min(100vw - 24px, 1180px);
+      }
+
+      .hero,
+      .content-card {
+        padding: 22px;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div class="eyebrow">Socialscale · Video Demo Brief · Revised April 29, 2026</div>
+      <div class="hero-grid">
+        <div>
+          <h1>Build a demo video that feels <em>inevitable</em>.</h1>
+          <p class="lede">
+            This brief is for an external creative team producing a high-conviction Socialscale demo video. The goal is to make the category legible, show the product in motion, and position Socialscale as the operating system for social commerce, creator management, attribution, and enterprise-ready workflow.
+          </p>
+          <div class="hero-links">
+            <a class="pill" href="https://socialscale.ai/" target="_blank" rel="noreferrer">Current website</a>
+            <a class="pill" href="https://breezy-consistency-275799.framer.app/" target="_blank" rel="noreferrer">Target layout reference</a>
+            <a class="pill" href="https://chantastico.github.io/videodemobrief/" target="_blank" rel="noreferrer">Current brief being replaced</a>
+          </div>
+        </div>
+        <aside class="hero-note">
+          <div class="label">Creative North Star</div>
+          <p>
+            The piece should feel sharp, modern, operator-first, and commercially grounded. Not “AI magic.” Not generic creator economy hype. It should communicate: this is infrastructure for teams running serious social commerce programs.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <div class="main">
+      <aside class="side">
+        <h2>Contents</h2>
+        <nav class="toc">
+          <a href="#objective">Objective</a>
+          <a href="#icp">Audience / ICPs</a>
+          <a href="#messaging">Messaging Priorities</a>
+          <a href="#inspiration">Inspiration + Kinect Logic</a>
+          <a href="#script">60s Script Direction</a>
+          <a href="#seo">SEO / Must-Say Keywords</a>
+          <a href="#gtm">GTM Notes for Creative</a>
+        </nav>
+        <div class="side-note">
+          This brief is written so external creatives understand the buyer, the business stakes, and the exact phrases and visual logic that matter, without exposing live prospect names or internal pipeline details.
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="content-card" id="objective">
+          <div class="section-head">
+            <div class="label">01 · Objective</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">What this video needs to do</h2>
+          <p class="section-intro">
+            The video should work as a homepage anchor, outbound asset, investor-friendly overview, and sales enablement piece. It needs to help viewers immediately understand the category problem, see the product as the solution, and believe Socialscale can support both fast-moving brands and larger enterprise programs.
+          </p>
+          <div class="grid-3">
+            <div class="mini-card">
+              <div class="meta">Primary job</div>
+              <h3>Create category clarity</h3>
+              <ul>
+                <li>Social commerce is fragmented across creators, content, and commerce.</li>
+                <li>Most teams still operate through spreadsheets, DMs, email, and disconnected tools.</li>
+                <li>Socialscale unifies that work into one operating system.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="meta">Secondary job</div>
+              <h3>Show operational maturity</h3>
+              <ul>
+                <li>The platform is not just for inspiration or discovery.</li>
+                <li>It supports campaign execution, creator coordination, attribution, storefronts, content workflows, and performance visibility.</li>
+                <li>It should feel reliable enough for teams with real budgets and cross-functional stakeholders.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="meta">Conversion job</div>
+              <h3>Move the right buyers</h3>
+              <ul>
+                <li>Make operators feel understood.</li>
+                <li>Make agencies see resale value.</li>
+                <li>Make enterprise buyers see governance, scale, and systemization.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="big-quote">
+            <p>Socialscale is the system that connects creators to measurable revenue.</p>
+            <span>This is the sentence the viewer should leave with, even if they forget everything else.</span>
+          </div>
+        </section>
+
+        <section class="content-card" id="icp">
+          <div class="section-head">
+            <div class="label">02 · Audience</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">Core ICPs for the creative team</h2>
+          <p class="section-intro">
+            The team does not need named accounts. They do need a clean picture of who this video must resonate with. Frame all creative choices around the following three buyer groups.
+          </p>
+          <div class="grid-3">
+            <article class="icp-card">
+              <div class="meta">ICP 1 · Brand Operator</div>
+              <h3>DTC / consumer brand team</h3>
+              <ul>
+                <li>Runs creator programs across beauty, fashion, food, lifestyle, or retail.</li>
+                <li>Feels buried in briefs, approvals, tracking links, creator comms, and manual reporting.</li>
+                <li>Needs better attribution and faster campaign operations.</li>
+                <li>Speaks in terms of revenue, content performance, speed, and team bandwidth.</li>
+              </ul>
+            </article>
+            <article class="icp-card">
+              <div class="meta">ICP 2 · Agency Manager</div>
+              <h3>Agency or service partner</h3>
+              <ul>
+                <li>Manages creator activity for multiple clients.</li>
+                <li>Needs one place to run workflows, prove ROI, and scale delivery without headcount chaos.</li>
+                <li>Would value white-label feel, reporting confidence, and operational leverage.</li>
+                <li>Speaks in terms of efficiency, client results, and repeatable process.</li>
+              </ul>
+            </article>
+            <article class="icp-card">
+              <div class="meta">ICP 3 · Enterprise B2B</div>
+              <h3>Large complex organization</h3>
+              <ul>
+                <li>May sell through partners, field teams, channel ecosystems, retail programs, or distributed content motions.</li>
+                <li>Needs structure, visibility, permissions, auditability, and consistent execution.</li>
+                <li>Wants a system that can coordinate many stakeholders across regions or business units.</li>
+                <li>Speaks in terms of governance, scale, operational control, performance insight, and infrastructure.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>Important for creative:</strong>
+            Do not over-index on “influencer” aesthetics. For ICP 3, the product should feel credible for serious organizations, not just creator-first startups. Keep the visuals premium, structured, and operational.
+          </div>
+        </section>
+
+        <section class="content-card" id="messaging">
+          <div class="section-head">
+            <div class="label">03 · Messaging</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">Message hierarchy</h2>
+          <p class="section-intro">
+            The script should not try to say everything. It should ladder from problem, to system, to proof, to strategic value.
+          </p>
+          <div class="grid-2">
+            <div class="mini-card">
+              <div class="meta">Core problem</div>
+              <h3>Social commerce is fragmented</h3>
+              <ul>
+                <li>Creator management lives in one place.</li>
+                <li>Content lives somewhere else.</li>
+                <li>Commerce and conversion data live elsewhere again.</li>
+                <li>That fragmentation makes scaling hard and attribution weak.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="meta">Core solution</div>
+              <h3>One system, one workflow, one source of truth</h3>
+              <ul>
+                <li>Manage creators.</li>
+                <li>Run campaigns.</li>
+                <li>Organize content.</li>
+                <li>Launch storefronts and track what drives revenue.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="meta">Strategic layer</div>
+              <h3>From operations to intelligence</h3>
+              <ul>
+                <li>Socialscale should feel like infrastructure now.</li>
+                <li>The platform should hint at future intelligence, recommendations, and automation.</li>
+                <li>Not a gimmick, but a system that compounds with data.</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="meta">Emotional outcome</div>
+              <h3>Confidence instead of chaos</h3>
+              <ul>
+                <li>The before state feels scattered and fragile.</li>
+                <li>The after state feels calm, measurable, and scalable.</li>
+                <li>Creative should make that contrast obvious.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card" id="inspiration">
+          <div class="section-head">
+            <div class="label">04 · Inspiration</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">Kinect-style inspiration and reverse-engineered logic</h2>
+          <p class="section-intro">
+            Use the Kinect-inspired format as a narrative device: immediate human presence, direct relevance, then product-in-context. The idea is not to mimic the original literally, but to borrow its pacing, pattern interrupt, and “this is about me” effect.
+          </p>
+          <div class="callout">
+            <strong>Reference assets for the creative team:</strong>
+            Use these as tone, pacing, and narrative references for the opening pattern interrupt, direct-address delivery, and product-in-context storytelling.
+            <ul style="margin-top:10px; padding-left:18px;">
+              <li><a href="https://www.linkedin.com/posts/rajsunder_hello-firstname-everyone-does-this-activity-7404471526026076162-5qBN" target="_blank" rel="noreferrer">LinkedIn post reference</a></li>
+              <li><a href="https://www.youtube.com/watch?v=Q15JuRUm1fE" target="_blank" rel="noreferrer">Deel reference 01</a></li>
+              <li><a href="https://www.youtube.com/watch?v=9Jznq6JCqdg" target="_blank" rel="noreferrer">Deel reference 02</a></li>
+              <li><a href="https://www.youtube.com/watch?v=gU2uc_wZ7UU" target="_blank" rel="noreferrer">Deel reference 03</a></li>
+            </ul>
+          </div>
+          <div class="grid-3">
+            <div class="shot-card">
+              <div class="meta">What to borrow</div>
+              <h3>Human-first opening</h3>
+              <p>A face on screen in the first seconds creates trust, attention, and momentum before we move into UI or feature explanation.</p>
+            </div>
+            <div class="shot-card">
+              <div class="meta">What to borrow</div>
+              <h3>Personalized relevance</h3>
+              <p>Show the viewer a real operating context quickly: dashboards, campaign workflows, product pages, creator activity, revenue surfaces.</p>
+            </div>
+            <div class="shot-card">
+              <div class="meta">What to borrow</div>
+              <h3>Fast proof at scale</h3>
+              <p>Montage multiple use cases and moments so the viewer feels the platform has breadth, not just a single clever feature.</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Script Layer</th>
+                  <th>Visual Layer</th>
+                  <th>Layout / Shot</th>
+                  <th>Why It Works</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0–2s</td>
+                  <td>Open with a person and a sharp statement about how social commerce teams operate today.</td>
+                  <td>Face foreground, custom background, immediate motion.</td>
+                  <td>Selfie / direct-to-camera</td>
+                  <td>Human pattern interrupt. The viewer stops because someone is speaking directly to them.</td>
+                </tr>
+                <tr>
+                  <td>2–5s</td>
+                  <td>Name the problem: everything is spread across creators, content, and commerce.</td>
+                  <td>UI fragments, tabs, spreadsheets, DMs, uploads, analytics.</td>
+                  <td>Split-screen or layered desktop</td>
+                  <td>Creates immediate self-recognition for operators.</td>
+                </tr>
+                <tr>
+                  <td>5–10s</td>
+                  <td>Imply the cost: no attribution, slow execution, no real source of truth.</td>
+                  <td>Highlight confusion and missing visibility.</td>
+                  <td>Screen recording with face overlay</td>
+                  <td>Makes the problem feel expensive, not just annoying.</td>
+                </tr>
+                <tr>
+                  <td>10–20s</td>
+                  <td>Introduce Socialscale as the operating system.</td>
+                  <td>Dashboard reveal, product flows, clean interface.</td>
+                  <td>Picture-in-picture</td>
+                  <td>The reveal lands harder after the chaos setup.</td>
+                </tr>
+                <tr>
+                  <td>20–30s</td>
+                  <td>Show creator management, campaign workflow, content approvals, storefronts, and tracking.</td>
+                  <td>Fast sequence of the product doing useful work.</td>
+                  <td>Montage</td>
+                  <td>Breadth creates scale credibility.</td>
+                </tr>
+                <tr>
+                  <td>30–40s</td>
+                  <td>Bridge to different ICPs: brand teams, agencies, enterprise programs.</td>
+                  <td>Use-case overlays and role-based framing.</td>
+                  <td>Text overlays + product demo</td>
+                  <td>Shows this is not a one-segment point tool.</td>
+                </tr>
+                <tr>
+                  <td>40–50s</td>
+                  <td>Return to direct human framing and strategic value.</td>
+                  <td>Confident face shot, product in background.</td>
+                  <td>Centered close shot</td>
+                  <td>Rebuilds trust and makes the takeaway memorable.</td>
+                </tr>
+                <tr>
+                  <td>50–60s</td>
+                  <td>Land the CTA with category language and business outcome.</td>
+                  <td>Clean logo, URL, minimal UI, bold text.</td>
+                  <td>Centered close</td>
+                  <td>Simple frame makes the final message stick.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-card" id="script">
+          <div class="section-head">
+            <div class="label">05 · Script</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">Recommended 60-second script structure</h2>
+          <p class="section-intro">
+            This is not meant to lock final copy word-for-word. It is a working narrative structure that preserves the pacing and strategic beats we want.
+          </p>
+          <div class="beats">
+            <article class="beat">
+              <div class="beat-time">0–6s</div>
+              <div>
+                <h4>Hook</h4>
+                <p>“Social commerce should drive revenue. But for most teams, it still runs through spreadsheets, DMs, and disconnected tools.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Human face first.</li>
+                  <li>Show clutter, tabs, approvals, creator messages, reporting gaps.</li>
+                  <li>Make the category problem unmistakable fast.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="beat">
+              <div class="beat-time">6–12s</div>
+              <div>
+                <h4>Tension</h4>
+                <p>“Your content is here. Your creators are there. Your commerce data lives somewhere else. And that means you cannot see what is actually working.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Layer content library, creator workflow, commerce reporting.</li>
+                  <li>Use motion to emphasize fragmentation.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="beat">
+              <div class="beat-time">12–20s</div>
+              <div>
+                <h4>Reveal</h4>
+                <p>“Socialscale brings creators, content, and commerce into one system.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Clean product reveal.</li>
+                  <li>Shift from chaotic cuts to composed interface shots.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="beat">
+              <div class="beat-time">20–34s</div>
+              <div>
+                <h4>Product proof</h4>
+                <p>“Manage creators. Launch campaigns. Organize content. Build storefronts. Track performance. See what drives revenue.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Fast montage of the core product suite.</li>
+                  <li>Each moment should feel useful, not decorative.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="beat">
+              <div class="beat-time">34–46s</div>
+              <div>
+                <h4>Multi-ICP bridge</h4>
+                <p>“Whether you run one creator program, manage multiple brands, or need enterprise-wide visibility, Socialscale gives your team one place to operate.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Show role-based flexibility without overcomplicating.</li>
+                  <li>Important moment for ICP 3 credibility.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="beat">
+              <div class="beat-time">46–55s</div>
+              <div>
+                <h4>Strategic finish</h4>
+                <p>“This is more than creator management. It is the infrastructure layer for social commerce.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Return to face or strong brand frame.</li>
+                  <li>Keep it calm and authoritative.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="beat">
+              <div class="beat-time">55–60s</div>
+              <div>
+                <h4>CTA</h4>
+                <p>“Run social commerce with one system. Socialscale.ai.”</p>
+              </div>
+              <div>
+                <ul>
+                  <li>Logo, URL, minimal frame.</li>
+                  <li>Clean landing. No clutter in the last five seconds.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="must-say">
+            <h3>Must-say phrases to work into spoken VO if possible</h3>
+            <div class="keyword-list">
+              <span class="keyword">social commerce</span>
+              <span class="keyword">creator management</span>
+              <span class="keyword">creator campaigns</span>
+              <span class="keyword">content performance</span>
+              <span class="keyword">creator attribution</span>
+              <span class="keyword">storefronts</span>
+              <span class="keyword">revenue tracking</span>
+              <span class="keyword">campaign workflow</span>
+              <span class="keyword">creator ROI</span>
+              <span class="keyword">one system</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card" id="seo">
+          <div class="section-head">
+            <div class="label">06 · SEO</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">SEO keyword guidance for spoken and on-screen language</h2>
+          <p class="section-intro">
+            For GTM efficiency, the best keyword set is not just high-volume generic tech language. It should align to category ownership, buyer intent, and phrases Socialscale can credibly win around. These keywords can appear in VO, captions, supers, page copy around the video, YouTube titles, landing page text, and paid creative variants.
+          </p>
+          <div class="grid-2">
+            <article class="keyword-card">
+              <div class="meta">Category ownership</div>
+              <h3>Primary keywords</h3>
+              <ul>
+                <li><strong>social commerce platform</strong> — best high-intent category phrase.</li>
+                <li><strong>social commerce software</strong> — software-led buyer intent.</li>
+                <li><strong>social commerce management platform</strong> — narrows toward operational buyers.</li>
+                <li><strong>creator commerce platform</strong> — strong differentiator versus generic influencer tooling.</li>
+                <li><strong>creator management platform</strong> — useful bridge for existing search behavior.</li>
+              </ul>
+            </article>
+            <article class="keyword-card">
+              <div class="meta">Pain-driven intent</div>
+              <h3>Problem / solution keywords</h3>
+              <ul>
+                <li><strong>creator attribution</strong> — speaks directly to the hardest pain point.</li>
+                <li><strong>track creator sales</strong> — plain-language buyer query.</li>
+                <li><strong>creator ROI</strong> — commercial and board-friendly phrasing.</li>
+                <li><strong>manage creator campaigns</strong> — operational workflow phrase.</li>
+                <li><strong>content performance tracking</strong> — connects creative activity to measurable output.</li>
+              </ul>
+            </article>
+            <article class="keyword-card">
+              <div class="meta">Feature-led search</div>
+              <h3>Product adjacency keywords</h3>
+              <ul>
+                <li><strong>creator storefronts</strong> — specific, ownable product angle.</li>
+                <li><strong>affiliate storefront software</strong> — strong commerce-commercial overlap.</li>
+                <li><strong>UGC campaign management</strong> — adjacent buyer motion.</li>
+                <li><strong>creator content library</strong> — useful for search and product education.</li>
+                <li><strong>creator payments and tracking</strong> — practical workflow phrase.</li>
+              </ul>
+            </article>
+            <article class="keyword-card">
+              <div class="meta">Enterprise expansion</div>
+              <h3>ICP 3 credibility keywords</h3>
+              <ul>
+                <li><strong>enterprise social commerce</strong> — makes the upmarket signal explicit.</li>
+                <li><strong>social commerce infrastructure</strong> — strong strategic positioning phrase.</li>
+                <li><strong>creator operations platform</strong> — sounds more durable than creator tool.</li>
+                <li><strong>partner content management</strong> — useful for B2B or channel-led narratives.</li>
+                <li><strong>distributed commerce workflow</strong> — niche, but valuable for enterprise story framing.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>Why this keyword mix makes sense:</strong>
+            It combines category language, pain language, and feature language. That gives Socialscale a better chance to win search across discovery, consideration, and conversion rather than relying on one broad term alone.
+          </div>
+        </section>
+
+        <section class="content-card" id="gtm">
+          <div class="section-head">
+            <div class="label">07 · GTM</div>
+            <div class="line"></div>
+          </div>
+          <h2 class="section-title">What else to add from a GTM perspective</h2>
+          <p class="section-intro">
+            The brief should help the creative team make assets that are not only beautiful, but also reusable across channels and buyer stages.
+          </p>
+          <div class="grid-2">
+            <article class="advice-card">
+              <div class="meta">Creative output</div>
+              <h3>Ask for modular cutdowns</h3>
+              <ul>
+                <li>Create a 60s hero version, plus 30s, 15s, and 6s cutdowns.</li>
+                <li>Cut a brand-operator version, an agency version, and an enterprise-flavored version.</li>
+                <li>Build silent-first subtitle-safe versions for paid social and LinkedIn.</li>
+              </ul>
+            </article>
+            <article class="advice-card">
+              <div class="meta">Message testing</div>
+              <h3>Build multiple hooks</h3>
+              <ul>
+                <li>Test a problem-led hook.</li>
+                <li>Test an attribution-led hook.</li>
+                <li>Test an “all your creator activities in one place” hook.</li>
+                <li>Hook variation matters more than polishing a single intro forever.</li>
+              </ul>
+            </article>
+            <article class="advice-card">
+              <div class="meta">Proof points</div>
+              <h3>Include measurable language</h3>
+              <ul>
+                <li>Whenever possible, show outcomes like time saved, content tracked, creators managed, or revenue visibility gained.</li>
+                <li>If final case-study numbers are not approved, still structure visuals so proof can be swapped in later.</li>
+              </ul>
+            </article>
+            <article class="advice-card">
+              <div class="meta">Homepage conversion</div>
+              <h3>Design around first-screen behavior</h3>
+              <ul>
+                <li>The first 5 seconds should work even with no sound.</li>
+                <li>Headline overlays should stand alone for skim readers.</li>
+                <li>The CTA frame should be reusable as a homepage still and sales deck screenshot.</li>
+              </ul>
+            </article>
+            <article class="advice-card">
+              <div class="meta">Sales enablement</div>
+              <h3>Leave room for role-based overlays</h3>
+              <ul>
+                <li>Add optional supers like “For brand teams,” “For agencies,” and “For enterprise programs.”</li>
+                <li>This makes one video easier to repurpose in decks, outbound sequences, and landing pages.</li>
+              </ul>
+            </article>
+            <article class="advice-card">
+              <div class="meta">Brand strategy</div>
+              <h3>Position the category, not just the product</h3>
+              <ul>
+                <li>Socialscale should sound like it owns a market narrative.</li>
+                <li>Use phrases like “infrastructure,” “operating system,” and “source of truth” carefully and consistently.</li>
+                <li>This is how the video supports broader category creation.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="footer-note">
+            Suggested tone for VO and supers: crisp, commercial, grounded, modern, and strategically confident. Avoid jargon-heavy AI claims, playful creator clichés, or startup language that makes the platform feel small.
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
